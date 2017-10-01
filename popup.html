@@ -1,0 +1,90 @@
+<html ng-app="paypalApp">
+<head>
+  <title>Paypal Calculator</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,  initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/popup.css">
+</head>
+<body ng-controller="paypalCalculator">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center text-primary">
+          Calculador de Paypal a Bolivares
+        </h3>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="montoatransferir">Dolares a Transferir</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="text" class="form-control" id="montoatransferir" placeholder="Dolares" ng-model="monto" ng-change="calcular()">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="tasadeventa">Tasa de Venta</label>
+            <div class="input-group">
+              <div class="input-group-addon">Bs</div>
+              <input type="text" class="form-control" id="tasadeventa" placeholder="Bolivares" ng-model="tasa" ng-change="calcular()" >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="comisionpaypal">Comision Paypal 5,4% + 0.30</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="text" class="form-control" id="comisionpaypal" placeholder="Dolares" ng-model="comision" disabled>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="totalpaypal">Total Tranferido en $(Dolares)</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="text" class="form-control" id="totalpaypal" placeholder="Dolares" ng-model="totalpaypal" disabled>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="totalbs">Total en Bolivares</label>
+            <div class="input-group">
+              <div class="input-group-addon">Bs</div>
+              <input type="text" class="form-control" id="totalbs" placeholder="{{ totalbs | number:2 }}">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/controller.js"></script>
+
+</body>
+</html>

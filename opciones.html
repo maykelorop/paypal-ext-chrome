@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Configuracion de la extension</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+	<label for="textfield">URL</label>
+	<input type="text" name="textfield" id="textfield" />
+	<input id="button" onclick="javascript:localStorage['urlExtension'] = document.forms.form1.textfield.value;return false" name="button" type="submit" value="Guardar" />
+</form>
+</body>
+</html>
